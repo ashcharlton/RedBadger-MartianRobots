@@ -13,15 +13,15 @@ The output should be the robots final position and orientation. If the robot is 
 Entities:
 
 Robot
-	XPosition - int
-	YPosition - int
-	Direction - string/enum
-	ProcessInstructions(List<string>, Grid) - Passing in the grid to this function so that the robot knows the constraints of the grid.
+	* XPosition - int
+	* YPosition - int
+	* Direction - string/enum
+	* ProcessInstructions(List<string>, Grid) - Passing in the grid to this function so that the robot knows the constraints of the grid.
 	
 Grid
-	MaxXCoord - int
-	MaxYCoord - int
-	Scents - HashSet<int, int>  *using a hashset as it's quicker than a list but also it won't add duplicates as we don't need to store the same scent coords twice.
+	* MaxXCoord - int
+	* MaxYCoord - int
+	* Scents - HashSet<int, int>  *using a hashset as it's quicker than a list but also it won't add duplicates as we don't need to store the same scent coords twice.
 	
 Direction
 	N,
