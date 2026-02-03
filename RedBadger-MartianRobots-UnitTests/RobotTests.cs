@@ -42,5 +42,22 @@ namespace RedBadger_MartianRobots_UnitTests
             // Assert
             Assert.That(robot.Direction, Is.EqualTo(finalDirection));
         }
+
+        [TestCase("R", Direction.E)]
+        [TestCase("RR", Direction.S)]
+        [TestCase("RRR", Direction.W)]
+        [TestCase("RRRR", Direction.N)]
+        public void InstructionIsRight_RobotRotatesClockwise(string instructions, Direction finalDirection)
+        {
+            // Arrange
+            var robot = new Robot(0, 0, Direction.N);
+            var grid = new Grid(1, 1);
+
+            // Act
+            robot.ProcessInstructions(instructions, grid);
+
+            // Assert
+            Assert.That(robot.Direction, Is.EqualTo(finalDirection));
+        }
     }
 }

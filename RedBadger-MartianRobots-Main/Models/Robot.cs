@@ -34,13 +34,14 @@ namespace RedBadger_MartianRobots_Main.Models
                 if(instruction.ToString() == Action.L.ToString())
                 {
                     // Change direction to the next left e.g. N -> W, S -> E
-                    // As we are using an enum that has numerical values we can subtract 1 from the value to go anti-clockwise around the compass.
-                    Direction = Direction + 3;
+                    // Adding 3 to the direct, overflows the upper limit of base4 and ends at the previous number.
+                    // Mod 4 makes sure it's always in the base4 range
+                    Direction = (Direction)((int)(Direction + 3)%4);
                 }else if(instruction.ToString() == Action.R.ToString())
                 {
                     // Change direction to the next right e.g. N -> E, S -> W
-                    // As we are using an enum that has numerical values we can subtract 1 from the value to go anti-clockwise around the compass.
-                    Direction = Direction + 1;
+                    // We will do the same as turning left but instead increment by 1, but still mod 4 as we could have more than 4 right turns in the instructions
+                    Direction = (Direction)((int)(Direction + 1)%4);
                 }
                 else if(instruction.ToString() == Action.F.ToString())
                 {
