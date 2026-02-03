@@ -36,5 +36,6 @@ Action
 	
 
 ## Notes
-I assumed adding and subtracting to the directions would allow me to rotate around the compass.
-I wrote a test to test this for turning left, but the test failed as I have a negative direction. 
+- I assumed adding and subtracting to the directions would allow me to rotate around the compass.
+- I wrote a test to test this for turning left, but the test failed as I have a negative direction. 
+- Solution: Given that the directions are essentially base 4 (0,1,2,3) and the direction needs to remain positive, we can simply add 3 instead of subtracting 1 to loop round and end up at the previous direction. 
