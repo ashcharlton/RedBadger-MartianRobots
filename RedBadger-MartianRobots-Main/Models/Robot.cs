@@ -20,12 +20,15 @@ namespace RedBadger_MartianRobots_Main.Models
         public Direction Direction { get; set; }
         public bool IsRobotLost { get; set; }
 
-        public void ProcessInstructions(List<string> instructions, Grid grid)
+        public void ProcessInstructions(string instructions, Grid grid)
         {
             foreach (var instruction in instructions)
             {
                 // Check if the robot is lost, if so then don't continue processing
-
+                if(IsRobotLost)
+                {
+                    break;
+                }
                 
                 
                 
