@@ -30,8 +30,22 @@ namespace RedBadger_MartianRobots_Main.Models
                     break;
                 }
                 
-                
-                
+                // check the instructions
+                if(instruction.ToString() == Action.L.ToString())
+                {
+                    // Change direction to the next left e.g. N -> W, S -> E
+                    // As we are using an enum that has numerical values we can subtract 1 from the value to go anti-clockwise around the compass.
+                    Direction = Direction - 1;
+                }else if(instruction.ToString() == Action.R.ToString())
+                {
+                    // Change direction to the next right e.g. N -> E, S -> W
+                    // As we are using an enum that has numerical values we can subtract 1 from the value to go anti-clockwise around the compass.
+                    Direction = Direction + 1;
+                }
+                else if(instruction.ToString() == Action.F.ToString())
+                {
+                    // Move the robot
+                }
             }
         }
     }
