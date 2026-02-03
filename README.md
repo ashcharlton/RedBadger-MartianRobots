@@ -34,3 +34,7 @@ Action
 	R,
 	L
 	
+
+## Notes
+I assumed adding and subtracting to the directions would allow me to rotate around the compass.
+I wrote a test to test this for turning left, but the test failed as I have a negative direction. 
