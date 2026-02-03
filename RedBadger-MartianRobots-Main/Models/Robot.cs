@@ -69,8 +69,6 @@ namespace RedBadger_MartianRobots_Main.Models
                     // The robot has fallen off the grid, add a scent to the grid and mark robot as lost
                     grid.AddScent(XPosition, YPosition);
                     IsRobotLost = true;
-                    XPosition = XPosition;
-                    YPosition = YPosition;
                 }
             }
             else

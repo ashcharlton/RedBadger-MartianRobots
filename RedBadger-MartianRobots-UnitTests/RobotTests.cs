@@ -94,7 +94,7 @@ namespace RedBadger_MartianRobots_UnitTests
             Assert.That(robot2.IsRobotLost, Is.False);
             Assert.That(grid.HasScent(0, 1), Is.True);
             Assert.That(robot1.XPosition, Is.EqualTo(0));
-            Assert.That(robot1.YPosition, Is.EqualTo(2));
+            Assert.That(robot1.YPosition, Is.EqualTo(1));
 
             Assert.That(robot2.XPosition, Is.EqualTo(0));
             Assert.That(robot2.YPosition, Is.EqualTo(1));
