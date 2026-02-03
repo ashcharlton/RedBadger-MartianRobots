@@ -30,7 +30,6 @@ namespace RedBadger_MartianRobots_UnitTests
         [TestCase("LL", Direction.S)]
         [TestCase("LLL", Direction.E)]
         [TestCase("LLLL", Direction.N)]
-
         public void InstructionIsLeft_RobotRotatesAntiClockwise(string instructions, Direction finalDirection)
         {
             // Arrange
