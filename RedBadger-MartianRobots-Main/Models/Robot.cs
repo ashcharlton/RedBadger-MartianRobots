@@ -49,5 +49,29 @@ namespace RedBadger_MartianRobots_Main.Models
                 }
             }
         }
+
+        private void MoveRobot(Grid grid)
+        {
+            // Passing in the grid to check if the robot is on a scent or off the grid
+            // Seeing as moving only moves one space in the current direction, we don't need any other information.
+
+            // Firstly we need to check the robots next position so we can check if it is off or on the grid
+            var newXPosition = Direction == Direction.N ? XPosition + 1 : Direction == Direction.S ? XPosition - 1 : XPosition;
+            var newYPosition = Direction == Direction.E ? YPosition + 1 : Direction == Direction.W ? YPosition -1 : YPosition;
+
+            if(grid.IsOffGrid(newXPosition, newYPosition))
+            {
+                // The robot has fallen off the grid, add a scent to the grid and mark robot as lost
+                grid.AddScent(newXPosition, newYPosition);
+                IsRobotLost = true;
+            }
+            else
+            {
+                XPosition = newXPosition;
+                YPosition = newYPosition;
+            }
+            
+
+        }
     }
 }
