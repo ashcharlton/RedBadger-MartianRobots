@@ -59,5 +59,20 @@ namespace RedBadger_MartianRobots_UnitTests
             // Assert
             Assert.That(robot.Direction, Is.EqualTo(finalDirection));
         }
+
+        [Test]
+        public void RobotFallsOffGrid_RobotIsLostAndScentIsAdded()
+        {
+            // Arrange
+            var robot = new Robot(0, 0, Direction.N);
+            var grid = new Grid(1,1);
+
+            // Act
+            robot.ProcessInstructions("FF", grid);
+
+            // Assert
+            Assert.That(robot.IsRobotLost, Is.True);
+            Assert.That(grid.HasScent(0, 1), Is.True);
+        }
     }
 }

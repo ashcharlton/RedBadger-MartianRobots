@@ -30,7 +30,7 @@ namespace RedBadger_MartianRobots_Main.Models
 
         public void AddScent(int xPosition, int yPosition) => _scents.Add((xPosition, yPosition));
 
-        public void HasScent(int xPosition, int yPosition) => _scents.Contains((xPosition, yPosition));
+        public bool HasScent(int xPosition, int yPosition) => _scents.Contains((xPosition, yPosition));
 
         public bool IsOffGrid(int xPosition, int yPosition) => xPosition < 0 || yPosition < 0 || xPosition > _maxXCoord || yPosition > _maxYCoord;
     }
