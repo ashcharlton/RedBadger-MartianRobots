@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RedBadger-MartianRobots-Main": {
+      "commandName": "Project",
+      "commandLineArgs": "InputData.txt"
+    }
+  }
+}

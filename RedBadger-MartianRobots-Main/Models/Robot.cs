@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace RedBadger_MartianRobots_Main.Models
 {
@@ -62,17 +63,23 @@ namespace RedBadger_MartianRobots_Main.Models
 
             if(grid.IsOffGrid(newXPosition, newYPosition))
             {
-                // The robot has fallen off the grid, add a scent to the grid and mark robot as lost
-                grid.AddScent(XPosition, YPosition);
-                IsRobotLost = true;
+                // Check if the robot is not on a scent, if so, then skip moving
+                if(!grid.HasScent(XPosition, YPosition))
+                {
+                    // The robot has fallen off the grid, add a scent to the grid and mark robot as lost
+                    grid.AddScent(XPosition, YPosition);
+                    IsRobotLost = true;
+                    XPosition = XPosition;
+                    YPosition = YPosition;
+                }
             }
             else
             {
                 XPosition = newXPosition;
                 YPosition = newYPosition;
             }
-            
-
         }
+
+        public override string ToString() => $"{XPosition} {YPosition} {Direction.ToString()}{(IsRobotLost ? " LOST" : "")}";
     }
 }
