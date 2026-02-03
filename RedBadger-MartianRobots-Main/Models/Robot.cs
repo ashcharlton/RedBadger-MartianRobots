@@ -8,23 +8,27 @@ namespace RedBadger_MartianRobots_Main.Models
 {
     public class Robot
     {
-        private readonly int _xPosition;
-        private readonly int _yPosition;
-        private readonly Direction _direction;
-
         public Robot(int xPosition, int yPosition, Direction direction)
         {
-            _xPosition = xPosition;
-            _yPosition = yPosition;
-            _direction = direction;
+            XPosition = xPosition;
+            YPosition = yPosition;
+            Direction = direction;
         }
+
+        public int XPosition { get; set; }
+        public int YPosition { get; set; }
+        public Direction Direction { get; set; }
+        public bool IsRobotLost { get; set; }
 
         public void ProcessInstructions(List<string> instructions, Grid grid)
         {
             foreach (var instruction in instructions)
             {
-                // Check if the instruction is an direction change first as the robot won't move any spaces and won't fall off. 
+                // Check if the robot is lost, if so then don't continue processing
 
+                
+                
+                
             }
         }
     }
